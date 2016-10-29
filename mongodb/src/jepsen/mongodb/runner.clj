@@ -58,7 +58,8 @@
     :validate [(complement neg?) "Must be non-negative"]]
 
    [nil "--tarball URL" "URL for the Mongo tarball to install. May be either HTTP, HTTPS, or a local file. For instance, --tarball https://foo.com/mongo.tgz, or file:///tmp/mongo.tgz"
-    :default  "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian71-3.3.1.tgz"
+    ;:default  "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-debian71-3.3.1.tgz"
+    :default  "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.2.10.tgz"
     :validate [(partial re-find #"^(file|https?)://.*\.(tar\.gz|tgz)")
                "Must be a file://, http://, or https:// URL ending in .tar.gz or .tgz"]]
   ])
