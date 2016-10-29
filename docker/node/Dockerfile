@@ -2,7 +2,8 @@
 #FROM tutum/debian:jessie
 #RUN rm /etc/apt/apt.conf.d/docker-clean && apt-get update && apt-get install -y sudo net-tools wget sysvinit-core sysvinit sysvinit-utils curl vim man faketime unzip iptables iputils-ping logrotate && apt-get remove -y --purge --auto-remove systemd
 
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM ceph/daemon:tag-build-master-jewel-ubuntu-16.04
 
 # Install packages
 RUN apt-get update && \
@@ -26,4 +27,7 @@ ENV AUTHORIZED_KEYS **None**
 
 EXPOSE 22
 
+# DISABLE parent entry point
+# https://github.com/ceph/ceph-docker/blob/master/ceph-releases/jewel/ubuntu/14.04/daemon/entrypoint.sh
+ENTRYPOINT []
 CMD ["/run.sh"]
