@@ -24,3 +24,6 @@ if [ ! -f /.root_pw_set ]; then
 fi
 
 exec /usr/sbin/sshd -D
+# systemctl restart ssh
+## hack for keep this container running
+#tail -f /dev/null
